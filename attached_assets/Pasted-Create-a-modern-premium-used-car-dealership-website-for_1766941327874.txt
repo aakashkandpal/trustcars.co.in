@@ -1,0 +1,105 @@
+Create a modern, premium used car dealership website for TrustCars.co.in that looks exactly like the provided reference theme.
+
+⸻
+
+🔧 Tech Stack
+	•	React + Vite
+	•	Tailwind CSS
+	•	JavaScript
+	•	Icons: Lucide / Heroicons
+	•	Images: Use high-quality car showroom / BMW-style placeholders
+
+⸻
+
+🎨 Theme & Branding (Very Important)
+	•	Primary color: Deep royal blue gradient background
+	•	Accent color: Yellow / gold buttons & highlights
+	•	Text: White & light gray
+	•	Style: Premium, trustworthy, clean, automotive-focused
+	•	Rounded cards, soft shadows, smooth hover animations
+
+⸻
+
+🚀 App Flow
+
+1️⃣ Flash / Splash Screen (On Load)
+	•	Full-screen blue gradient background
+	•	Centered text:
+	•	TrustCars.co.in
+	•	Animated loading bar under the text (yellow line filling smoothly)
+	•	Duration: 2–3 seconds
+	•	Automatically transitions to Home page
+
+⸻
+
+2️⃣ Navigation Bar (Sticky)
+	•	Logo text: TrustCars.co.in
+	•	Menu buttons:
+	•	Home
+	•	Collection
+	•	Contact Us
+	•	Enquiry
+	•	Right-side “Call Now” yellow button
+	•	Transparent navbar that becomes solid on scroll
+
+⸻
+
+3️⃣ Home Page (Hero Section)
+	•	Full-width background image of premium cars
+	•	Dark blue overlay
+	•	Heading:
+We bring you certified, high-quality pre-owned cars at unbeatable prices
+	•	CTA button:
+	•	View Collection (yellow button)
+
+⸻
+
+4️⃣ Trust Feature Cards (Below Hero)
+	•	3 horizontal cards with icons:
+	•	Verified Listings
+Every car thoroughly inspected and certified
+	•	Easy Financing
+Flexible payment plans tailored for you
+	•	Nationwide Delivery
+Free doorstep delivery across India
+
+⸻
+
+5️⃣ Premium Collection Section
+	•	Heading:
+Our Premium Collection
+	•	Grid of car cards:
+	•	Car image
+	•	Model name
+	•	Price
+	•	Fuel / Year / KM
+	•	Button: View Details
+
+⸻
+
+6️⃣ Testimonials Section
+	•	Heading:
+What Our Customers Say
+	•	Card-style testimonials with:
+	•	Customer name
+	•	Review text
+	•	Star rating icons
+
+⸻
+
+7️⃣ Footer
+	•	TrustCars.co.in branding
+	•	Phone number
+	•	Email
+	•	Social icons
+	•	Copyright
+
+⸻
+
+⚙️ Functional Requirements
+	•	Fully responsive (mobile + desktop)
+	•	Smooth animations & transitions
+	•	Clean folder structure
+	•	Dummy JSON data for cars & testimonials
+	•	Reusable components
+	•	SEO-friendly meta tags
