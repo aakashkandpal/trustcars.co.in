@@ -14,26 +14,25 @@ export default function SplashScreen() {
   }, [setLocation]);
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-gradient-to-b from-[#0a192f] to-[#0d1f3d]">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-gradient-to-b from-[#0a1f4d] to-[#1a3a70]">
       <div className="text-center px-4">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-8"
+          className="mb-12"
         >
-          <h1 className="font-display font-bold text-5xl md:text-7xl text-white tracking-tight">
-            Trust<span className="text-primary">Cars</span>
+          <h1 className="font-display font-bold text-6xl md:text-8xl text-white tracking-tight">
+            TrustCars.co.in
           </h1>
-          <p className="text-muted-foreground mt-4 text-lg">Premium Used Cars. Certified Quality.</p>
         </motion.div>
 
-        <div className="w-64 h-1 bg-white/10 rounded-full mx-auto overflow-hidden">
+        <div className="w-72 h-1.5 bg-white/20 rounded-full mx-auto overflow-hidden">
           <motion.div
-            className="h-full bg-primary"
+            className="h-full bg-gradient-to-r from-[#FFD700] to-[#FFC107]"
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
-            transition={{ duration: 2, ease: "easeInOut" }}
+            transition={{ duration: 2.2, ease: "easeInOut" }}
           />
         </div>
       </div>

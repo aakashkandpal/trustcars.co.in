@@ -34,11 +34,8 @@ export function Navbar() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/home" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-orange-500 flex items-center justify-center shadow-lg shadow-primary/20 group-hover:scale-105 transition-transform">
-              <Car className="text-background w-6 h-6" />
-            </div>
-            <span className="font-display font-bold text-2xl tracking-tight text-white">
-              Trust<span className="text-primary">Cars</span>
+            <span className="font-display font-bold text-xl tracking-tight text-white">
+              TrustCars.co.in
             </span>
           </Link>
 

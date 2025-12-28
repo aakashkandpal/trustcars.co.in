@@ -36,10 +36,10 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-display font-bold text-5xl md:text-7xl text-white mb-6 leading-tight max-w-4xl mx-auto"
+            className="font-display font-bold text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight max-w-4xl mx-auto"
           >
-            Drive Your Dream <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400">Without The Wait</span>
+            Find Your Perfect Ride with <br />
+            <span className="text-[#FFD700]">TrustCars</span>
           </motion.h1>
           
           <motion.p 
