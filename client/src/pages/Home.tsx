@@ -6,6 +6,7 @@ import { useTestimonials } from "@/hooks/use-testimonials";
 import { motion } from "framer-motion";
 import { BadgeCheck, Banknote, Truck, ArrowRight, Star } from "lucide-react";
 import { Link } from "wouter";
+import dealershipImage from "@assets/generated_images/real_indian_dealership_interior_with_two_premium_cars.png";
 
 export default function Home() {
   const { data: cars, isLoading: carsLoading } = useCars();
@@ -20,15 +21,14 @@ export default function Home() {
       
       {/* Hero Section */}
       <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-        {/* Background Image - Luxury Car */}
+        {/* Background Image - Dealership Garage */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[#0a192f]/80 z-10" /> {/* Blue Overlay */}
-          {/* Using Unsplash for a sleek car background */}
           <img 
-            src="https://pixabay.com/get/g1df0ac8ab0c1c4d36c44fbd0033d2839160f3291fa6089aa8b3d86e844de6b402d563a3da0bb0f36c08d643bd1ead2af7459f842328f2f5ef007f9387021ef16_1280.jpg" 
-            alt="Luxury Car Background" 
+            src={dealershipImage}
+            alt="Premium Cars in Dealership" 
             className="w-full h-full object-cover"
           />
+          <div className="absolute inset-0 bg-[#0a192f]/60 z-10" /> {/* Dark Blue Overlay at 60% opacity */}
         </div>
 
         <div className="relative z-10 container mx-auto px-4 text-center mt-16">
