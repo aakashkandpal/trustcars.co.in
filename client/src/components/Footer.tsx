@@ -18,17 +18,6 @@ export function Footer() {
             <p className="text-muted-foreground text-sm leading-relaxed">
               We bring you certified, high-quality pre-owned cars at unbeatable prices. Experience the thrill of driving without the premium price tag.
             </p>
-            <div className="flex gap-4">
-              {[Facebook, Twitter, Instagram].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-10 h-10 rounded-full bg-white/5 hover:bg-primary hover:text-background flex items-center justify-center transition-colors text-white"
-                >
-                  <Icon className="w-5 h-5" />
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Quick Links */}
