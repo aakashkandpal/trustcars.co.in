@@ -11,7 +11,7 @@ export const cars = pgTable("cars", {
   mileage: integer("mileage").notNull(),
   fuelType: text("fuel_type").notNull(),
   transmission: text("transmission").notNull(),
-  imageUrl: text("image_url").notNull(),
+  imageUrls: text("image_urls").array().notNull(),
   description: text("description").notNull(),
   isSold: boolean("is_sold").default(false),
 });

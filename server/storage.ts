@@ -48,9 +48,25 @@ export class DatabaseStorage implements IStorage {
   }
 
   async createTestimonial(testimonial: InsertTestimonial): Promise<Testimonial> {
-    const [newTestimonial] = await db.insert(testimonials).values(testimonial).returning();
-    return newTestimonial;
-  }
-}
+    const hondaCity: InsertCar = {
+      make: "Honda",
+      model: "City",
+      year: 2016,
+      price: 575000,
+      mileage: 67000,
+      fuelType: "Petrol",
+      transmission: "Manual",
+      imageUrls: [
+        "/attached_assets/City_8_1770652736856.jpg",
+        "/attached_assets/City_4_1770652736856.jpg",
+        "/attached_assets/City_5_1770652736856.jpg",
+        "/attached_assets/City_6_1770652736856.jpg",
+        "/attached_assets/City_9_1770652736856.jpg",
+        "/attached_assets/City_3_1770652736856.jpg"
+      ],
+      description: "Well maintained Honda City 2016 model. Excellent engine condition and clean interiors.",
+      isSold: false,
+    };
+    await this.createCar(hondaCity);
 
 export const storage = new DatabaseStorage();
