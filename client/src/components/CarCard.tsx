@@ -33,22 +33,28 @@ export function CarCard({ car }: CarCardProps) {
       {/* Image Container */}
       <div className="relative aspect-[16/10] overflow-hidden group/image">
         <AnimatePresence mode="wait">
-          <motion.img
-            key={currentImageIndex}
-            src={car.imageUrls[currentImageIndex]}
-            alt={`${car.make} ${car.model}`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="w-full h-full object-cover"
-          />
+          {car.imageUrls && car.imageUrls.length > 0 ? (
+            <motion.img
+              key={currentImageIndex}
+              src={car.imageUrls[currentImageIndex]}
+              alt={`${car.make} ${car.model}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="w-full h-full bg-muted flex items-center justify-center">
+              <span className="text-muted-foreground">No Image</span>
+            </div>
+          )}
         </AnimatePresence>
         
         <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-60" />
         
         {/* Navigation Arrows */}
-        {car.imageUrls.length > 1 && (
+        {car.imageUrls && car.imageUrls.length > 1 && (
           <div className="absolute inset-0 flex items-center justify-between px-2 opacity-0 group-hover/image:opacity-100 transition-opacity">
             <button
               onClick={prevImage}

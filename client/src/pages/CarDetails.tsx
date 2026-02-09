@@ -42,11 +42,17 @@ export default function CarDetails() {
           <div className="lg:col-span-2 space-y-8">
             {/* Image */}
             <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl relative aspect-video">
-              <img 
-                src={car.imageUrl} 
-                alt={`${car.make} ${car.model}`}
-                className="w-full h-full object-cover"
-              />
+              {car.imageUrls && car.imageUrls.length > 0 ? (
+                <img 
+                  src={car.imageUrls[0]} 
+                  alt={`${car.make} ${car.model}`}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="w-full h-full bg-muted flex items-center justify-center">
+                  <span className="text-muted-foreground">No Image</span>
+                </div>
+              )}
                {car.isSold && (
                 <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
                   <span className="bg-red-600 text-white px-8 py-3 rounded-full text-xl font-bold uppercase tracking-wider transform -rotate-12 border-4 border-white shadow-2xl">
