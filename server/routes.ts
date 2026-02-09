@@ -53,6 +53,25 @@ async function seedDatabase() {
   const existingCars = await storage.getCars();
   if (existingCars.length === 0) {
     await storage.createCar({
+      make: "Honda",
+      model: "City",
+      year: 2016,
+      price: 575000,
+      mileage: 67000,
+      fuelType: "Petrol",
+      transmission: "Manual",
+      imageUrls: [
+        "/attached_assets/City_8_1770652736856.jpg",
+        "/attached_assets/City_4_1770652736856.jpg",
+        "/attached_assets/City_5_1770652736856.jpg",
+        "/attached_assets/City_6_1770652736856.jpg",
+        "/attached_assets/City_9_1770652736856.jpg",
+        "/attached_assets/City_3_1770652736856.jpg"
+      ],
+      description: "Well maintained Honda City 2016 model. Excellent engine condition and clean interiors."
+    });
+
+    await storage.createCar({
       make: "BMW",
       model: "5 Series 520d",
       year: 2021,
@@ -60,7 +79,7 @@ async function seedDatabase() {
       mileage: 12000,
       fuelType: "Diesel",
       transmission: "Automatic",
-      imageUrl: "https://images.unsplash.com/photo-1555215695-3004980adade?w=800&q=80",
+      imageUrls: ["https://images.unsplash.com/photo-1555215695-3004980adade?w=800&q=80"],
       description: "Premium luxury sedan in pristine condition. Single owner, dealer serviced."
     });
     
@@ -72,7 +91,7 @@ async function seedDatabase() {
       mileage: 8500,
       fuelType: "Petrol",
       transmission: "Automatic",
-      imageUrl: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&q=80",
+      imageUrls: ["https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&q=80"],
       description: "Elegant and sporty. Panoramic sunroof, Burmester sound system."
     });
 
@@ -84,7 +103,7 @@ async function seedDatabase() {
       mileage: 25000,
       fuelType: "Diesel",
       transmission: "Automatic",
-      imageUrl: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&q=80",
+      imageUrls: ["https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&q=80"],
       description: "Matrix LED headlights, Virtual Cockpit, excellent highway cruiser."
     });
 
@@ -96,7 +115,7 @@ async function seedDatabase() {
       mileage: 5000,
       fuelType: "Diesel",
       transmission: "Automatic",
-      imageUrl: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80",
+      imageUrls: ["https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80"],
       description: "Rugged 4x4 capability with luxury interiors. Like new."
     });
   }
