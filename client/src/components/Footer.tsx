@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Twitter, MapPin, Mail, Phone, Car } from "lucide-react";
+import { contactInfo } from "@/lib/contact";
 
 export function Footer() {
   return (
@@ -40,15 +41,15 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-muted-foreground text-sm">
                 <MapPin className="w-5 h-5 text-primary shrink-0" />
-                <span>123 Auto Plaza, Dealer Street,<br />Mumbai, Maharashtra 400001</span>
+                <span>{contactInfo.address.street}<br />{contactInfo.address.city}, {contactInfo.address.state}</span>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground text-sm">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
-                <span>+91 98765 43210</span>
+                <span>{contactInfo.phone[0]}</span>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground text-sm">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
-                <span>sales@trustcars.co.in</span>
+                <span>{contactInfo.email[0]}</span>
               </li>
             </ul>
           </div>

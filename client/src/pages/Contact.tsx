@@ -2,6 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { contactInfo } from "@/lib/contact";
 
 export default function Contact() {
   return (
@@ -25,8 +26,9 @@ export default function Contact() {
                   <Phone className="w-6 h-6" />
                 </div>
                 <h3 className="font-bold text-white text-lg mb-2">Call Us</h3>
-                <p className="text-muted-foreground">+91 98765 43210</p>
-                <p className="text-muted-foreground">+91 98765 43211</p>
+                {contactInfo.phone.map((number, idx) => (
+                  <p key={idx} className="text-muted-foreground">{number}</p>
+                ))}
               </div>
 
               <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
@@ -34,8 +36,9 @@ export default function Contact() {
                   <Mail className="w-6 h-6" />
                 </div>
                 <h3 className="font-bold text-white text-lg mb-2">Email Us</h3>
-                <p className="text-muted-foreground">sales@trustcars.co.in</p>
-                <p className="text-muted-foreground">support@trustcars.co.in</p>
+                {contactInfo.email.map((mail, idx) => (
+                  <p key={idx} className="text-muted-foreground">{mail}</p>
+                ))}
               </div>
 
               <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
@@ -43,8 +46,8 @@ export default function Contact() {
                   <MapPin className="w-6 h-6" />
                 </div>
                 <h3 className="font-bold text-white text-lg mb-2">Visit Us</h3>
-                <p className="text-muted-foreground">123 Auto Plaza, Dealer Street</p>
-                <p className="text-muted-foreground">Mumbai, Maharashtra 400001</p>
+                <p className="text-muted-foreground">{contactInfo.address.street}</p>
+                <p className="text-muted-foreground">{contactInfo.address.city}, {contactInfo.address.state}</p>
               </div>
 
               <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
@@ -52,16 +55,8 @@ export default function Contact() {
                   <Clock className="w-6 h-6" />
                 </div>
                 <h3 className="font-bold text-white text-lg mb-2">Opening Hours</h3>
-                <p className="text-muted-foreground">Mon - Sat: 10:00 AM - 8:00 PM</p>
-                <p className="text-muted-foreground">Sun: 11:00 AM - 5:00 PM</p>
-              </div>
-            </div>
-
-            <div className="h-64 rounded-2xl overflow-hidden border border-white/10">
-              {/* Placeholder for map - in real app, use Google Maps Embed */}
-              <div className="w-full h-full bg-slate-800 flex items-center justify-center text-muted-foreground">
-                <MapPin className="w-8 h-8 mb-2 block mx-auto" />
-                <span className="block text-center">Interactive Map View</span>
+                <p className="text-muted-foreground">{contactInfo.hours.weekdays}</p>
+                <p className="text-muted-foreground">{contactInfo.hours.sunday}</p>
               </div>
             </div>
           </div>
