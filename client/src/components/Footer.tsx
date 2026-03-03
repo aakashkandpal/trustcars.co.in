@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter, MapPin, Mail, Phone, Car } from "lucide-react";
+import { MapPin, Mail, Phone } from "lucide-react";
 import { contactInfo } from "@/lib/contact";
 
 export function Footer() {
@@ -8,10 +8,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-background">
-                <Car className="w-5 h-5" />
-              </div>
+            <div className="flex items-center">
               <span className="font-display font-bold text-xl text-white">
                 Trust<span className="text-primary">Cars</span>
               </span>
@@ -41,7 +38,14 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-muted-foreground text-sm">
                 <MapPin className="w-5 h-5 text-primary shrink-0" />
-                <span>{contactInfo.address.street}<br />{contactInfo.address.city}, {contactInfo.address.state}</span>
+                <a
+                  href="https://maps.app.goo.gl/t6RxKrNHnwJykLeC6"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
+                  {contactInfo.address.street}<br />{contactInfo.address.city}, {contactInfo.address.state}
+                </a>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground text-sm">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
@@ -72,7 +76,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-          <p>© 2024 TrustCars.co.in. All rights reserved.</p>
+          <p>© 2026 TrustCars.co.in. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-primary">Privacy</a>
             <a href="#" className="hover:text-primary">Terms</a>

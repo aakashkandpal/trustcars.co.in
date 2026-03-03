@@ -4,13 +4,20 @@ import { CarCard } from "@/components/CarCard";
 import { useCars } from "@/hooks/use-cars";
 import { Search, SlidersHorizontal } from "lucide-react";
 import { useState } from "react";
+import { applyFeaturedOverrides, manualCollectionCars } from "@/lib/cars-config";
 
 export default function Collection() {
-  const { data: cars, isLoading } = useCars();
+  const { data: cars } = useCars();
   const [searchTerm, setSearchTerm] = useState("");
+  const previewSeedCars = [
+    ...(cars?.slice(0, 6) ?? []),
+    ...manualCollectionCars.map((car, i) => ({ ...car, id: 19000 + i })),
+  ].slice(0, 6);
+  const homePreviewCars = applyFeaturedOverrides(previewSeedCars);
+  const allCollectionCars = [...homePreviewCars, ...manualCollectionCars];
 
-  const filteredCars = cars?.filter(car => 
-    car.make.toLowerCase().includes(searchTerm.toLowerCase()) || 
+  const filteredCars = allCollectionCars.filter(car =>
+    car.make.toLowerCase().includes(searchTerm.toLowerCase()) ||
     car.model.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -21,8 +28,7 @@ export default function Collection() {
       <div className="container mx-auto px-4 py-12 flex-grow">
         <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
           <div>
-            <h1 className="text-4xl font-display font-bold text-white mb-2">Our Collection</h1>
-            <p className="text-muted-foreground">Explore our wide range of premium certified cars.</p>
+            <h1 className="text-4xl font-display font-bold text-white mb-2">Full Collection</h1>
           </div>
           
           <div className="flex gap-4 w-full md:w-auto">
@@ -43,20 +49,14 @@ export default function Collection() {
           </div>
         </div>
 
-        {isLoading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-             {[1, 2, 3, 4, 5, 6].map((i) => (
-                <div key={i} className="h-[400px] rounded-2xl bg-white/5 animate-pulse" />
-              ))}
-          </div>
-        ) : filteredCars?.length === 0 ? (
+        {filteredCars.length === 0 ? (
           <div className="text-center py-20">
             <h3 className="text-2xl font-bold text-white mb-2">No cars found</h3>
             <p className="text-muted-foreground">Try adjusting your search terms.</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredCars?.map((car) => (
+            {filteredCars.map((car) => (
               <CarCard key={car.id} car={car} />
             ))}
           </div>
