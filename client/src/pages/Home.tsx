@@ -120,7 +120,7 @@ export default function Home() {
               Success Stories & Premium Sales
             </h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
-              Celebrating our premium vehicle sales and the lasting relationships we've built with our valued clients.
+              Celebrating our vehicle sales and the lasting relationships we've built with our valued clients.
             </p>
             <div className="w-36 h-1 bg-primary mx-auto rounded-full mt-8" />
           </div>
