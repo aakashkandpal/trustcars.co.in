@@ -9,6 +9,7 @@ import Home from "@/pages/Home";
 import Collection from "@/pages/Collection";
 import CarDetails from "@/pages/CarDetails";
 import Contact from "@/pages/Contact";
+import Recycling from "@/pages/Recycling";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -16,6 +17,7 @@ function Router() {
     <Switch>
       <Route path="/" component={SplashScreen} />
       <Route path="/home" component={Home} />
+      <Route path="/recycling" component={Recycling} />
       <Route path="/collection" component={Collection} />
       <Route path="/car/:id" component={CarDetails} />
       <Route path="/contact" component={Contact} />
