@@ -23,7 +23,7 @@ export default function SplashScreen() {
           className="mb-12"
         >
           <h1 className="font-display font-bold text-6xl md:text-8xl text-white tracking-tight">
-            TrustCars.co.in
+            TrustCars
           </h1>
         </motion.div>
 

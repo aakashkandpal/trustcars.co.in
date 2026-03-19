@@ -35,7 +35,15 @@ export const testimonials = pgTable("testimonials", {
 });
 
 export const insertCarSchema = createInsertSchema(cars).omit({ id: true });
-export const insertEnquirySchema = createInsertSchema(enquiries).omit({ id: true, createdAt: true });
+export const insertEnquirySchema = createInsertSchema(enquiries, {
+  name: z.string().trim().min(2, "Please enter your name."),
+  phone: z
+    .string()
+    .trim()
+    .min(10, "Please enter a valid phone number.")
+    .max(20, "Phone number is too long."),
+  message: z.string().trim().min(2, "Please enter your message."),
+}).omit({ id: true, createdAt: true });
 export const insertTestimonialSchema = createInsertSchema(testimonials).omit({ id: true });
 
 export type Car = typeof cars.$inferSelect;

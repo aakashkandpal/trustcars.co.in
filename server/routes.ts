@@ -34,7 +34,11 @@ export async function registerRoutes(
           field: err.errors[0].path.join('.'),
         });
       }
-      throw err;
+
+      console.error("Failed to create enquiry", err);
+      return res.status(500).json({
+        message: "We couldn't save your enquiry right now. Please try again in a moment.",
+      });
     }
   });
 

@@ -1,7 +1,14 @@
+import { Link } from "wouter";
 import { MapPin, Mail, Phone } from "lucide-react";
 import { contactInfo } from "@/lib/contact";
 
 export function Footer() {
+  const quickLinks = [
+    { label: "Home", href: "/home" },
+    { label: "Collection", href: "/collection" },
+    { label: "Contact", href: "/contact" },
+  ];
+
   return (
     <footer className="bg-black/40 border-t border-white/5 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,11 +29,14 @@ export function Footer() {
           <div>
             <h3 className="font-display font-bold text-white text-lg mb-6">Quick Links</h3>
             <ul className="space-y-3">
-              {['Home', 'Collection', 'About Us', 'Contact', 'Terms & Conditions', 'Privacy Policy'].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                    {item}
-                  </a>
+              {quickLinks.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  >
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -75,13 +85,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
+        <div className="border-t border-white/5 pt-8 text-sm text-muted-foreground">
           <p>© 2026 TrustCars.co.in. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-primary">Privacy</a>
-            <a href="#" className="hover:text-primary">Terms</a>
-            <a href="#" className="hover:text-primary">Sitemap</a>
-          </div>
         </div>
       </div>
     </footer>

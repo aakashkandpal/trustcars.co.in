@@ -13,12 +13,27 @@ export function useCreateEnquiry() {
       });
 
       if (!res.ok) {
+        const errorBody = await res.json().catch(() => null);
+
         if (res.status === 400) {
-          const error = api.cars.list.responses[200].safeParse(await res.json()); // Using any schema just to parse error structure if needed, or generic error
-           throw new Error("Validation failed");
+          const parsedError = api.enquiries.create.responses[400].safeParse(errorBody);
+          if (parsedError.success) {
+            throw new Error(parsedError.data.message);
+          }
+          throw new Error("Please check your enquiry details and try again.");
         }
-        throw new Error("Failed to submit enquiry");
+
+        const message =
+          errorBody &&
+          typeof errorBody === "object" &&
+          "message" in errorBody &&
+          typeof errorBody.message === "string"
+            ? errorBody.message
+            : "Could not send enquiry right now. Please try again.";
+
+        throw new Error(message);
       }
+
       return api.enquiries.create.responses[201].parse(await res.json());
     },
   });

@@ -19,9 +19,7 @@ export function EnquiryForm({ carId, onSuccess }: EnquiryFormProps) {
     defaultValues: {
       name: "",
       phone: "",
-      message: carId 
-        ? "I am interested in this car. Please contact me." 
-        : "I would like to know more about your services.",
+      message: "",
       carId: carId || null,
     },
   });

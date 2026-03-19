@@ -38,7 +38,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/home" className="flex items-center gap-2 group">
             <span className="font-display font-bold text-xl tracking-tight text-white">
-              TrustCars.co.in
+              TrustCars
             </span>
           </Link>
 
