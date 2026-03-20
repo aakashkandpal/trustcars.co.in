@@ -82,3 +82,24 @@ DATABASE_URL=your_postgresql_connection_string
 npm run db:push
 5. Start Development Server
 npm run dev
+
+## Render Deployment
+
+This app is ready to run on Render as a Node web service.
+
+Use these settings:
+
+- Build Command: `npm ci && npm run build`
+- Start Command: `npm start`
+- Health Check Path: `/healthz`
+
+Set these environment variables in Render:
+
+- `DATABASE_URL`: your Render PostgreSQL connection string
+- `NODE_ENV=production`
+
+Notes:
+
+- The server already binds to Render's `PORT` automatically in [server/index.ts](/Users/aakashkandpal/Car-Dealership-Site/server/index.ts#L81).
+- The repo includes a [render.yaml](/Users/aakashkandpal/Car-Dealership-Site/render.yaml) blueprint if you want Render to read the service config from the repository.
+- If you create a Render PostgreSQL instance, prefer the Internal Database URL when your web service and database are both on Render.
